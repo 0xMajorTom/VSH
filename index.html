@@ -220,6 +220,154 @@ h1, .inner_banner_caption .captionContainer .innerBannerHeading1 {
 <link rel="preload" as="image" href="wp-content/uploads/2023/08/banner.jpg">
 <!-- Phase-1 Programmer: Dharmin  Edna | LIVE date: 29 AUG 2023 -->
 <!-- Phase-2 Pragrammer: Pooja  Edna | LIVE date: 02 OCT 2023 -->
+<style>
+.home-news-carousel {
+    position: relative;
+}
+
+.home-news-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: -12px 0 20px;
+}
+
+.home-news-arrow {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.home-news-arrow:hover:not(:disabled),
+.home-news-arrow:focus-visible {
+    background: #e07e34;
+    border-color: #e07e34;
+}
+
+.home-news-arrow:disabled {
+    cursor: default;
+    opacity: 0.35;
+}
+
+.home-news-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.home-news-track::-webkit-scrollbar {
+    display: none;
+}
+
+.home-news-card {
+    display: flex;
+    flex: 0 0 calc((100% - 24px) / 2);
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    color: #454b52;
+    scroll-snap-align: start;
+}
+
+.home-news-card:hover {
+    color: #454b52;
+}
+
+.home-news-image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #e8e8e8;
+}
+
+.home-news-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.home-news-content {
+    flex: 1;
+    padding: 26px 28px 30px;
+}
+
+.home-news-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+    margin-bottom: 14px;
+    color: #858585;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.home-news-category {
+    color: #e07e34;
+    font-weight: 600;
+}
+
+.home-news-content h3 {
+    margin: 0 0 12px;
+    padding: 0;
+    color: #202020;
+    font-size: 22px;
+    line-height: 1.35;
+}
+
+.home-news-content p {
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 0;
+    color: #686868;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+@media (max-width: 991.98px) {
+    .home-news-card {
+        flex-basis: 80%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .home-news-track {
+        gap: 16px;
+    }
+
+    .home-news-card {
+        flex-basis: 88%;
+    }
+
+    .home-news-controls {
+        margin-top: -6px;
+    }
+
+    .home-news-content {
+        padding: 22px 20px 24px;
+    }
+
+    .home-news-content h3 {
+        font-size: 19px;
+    }
+}
+</style>
 </head>
 <body data-rsssl=1 class="home wp-singular page-template page-template-template-home page-template-template-home-php page page-id-65 wp-theme-vulcan-shield bannerHeader elementor-default elementor-kit-556 elementor-page elementor-page-65">
     <div id="wrapper">
@@ -582,36 +730,75 @@ h1, .inner_banner_caption .captionContainer .innerBannerHeading1 {
                                                                             </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                                                <div class="col-lg-7">
-                                  <a href="p-1933.html">
-                                    <div class="parnetr-blog-box">
-                                        <div class="parnetrBlog-pic-container">
-                                            <figure><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="An European Production Base, a Shorter, More Reliable Material Supply" data-lazy-src="wp-content/uploads/2026/07/IMG_0633.JPG-scaled.jpeg"><noscript><img src="wp-content/uploads/2026/07/IMG_0633.JPG-scaled.jpeg" alt="An European Production Base, a Shorter, More Reliable Material Supply"></noscript></figure>
-                                        </div>
-                                        <div class="parnetr-blog-contnet">
-                                                                                            <h6>News                                                                                        <h3>An European Production Base, a Shorter, More Reliable Material Supply</h3>
-                                             Vulcan Shield Hungary&#8217;s manufacturing facility in Hungary has been fully operational since April 2026, marking an expansion of the company&#8217;s production footprint and establishing an European production base for customers across Europe. Reaching this point has been the result of sustained effort from the team involved, and we are proud of the progress we&#8217;ve made [&hellip;]                                        </div>
-                                    </div>
-                                  </a>
+                            <div class="home-news-carousel" data-home-news-carousel>
+                                <div class="home-news-controls" aria-label="News carousel controls">
+                                    <button class="home-news-arrow" type="button" data-news-direction="-1" aria-label="Previous news stories" disabled>&larr;</button>
+                                    <button class="home-news-arrow" type="button" data-news-direction="1" aria-label="Next news stories">&rarr;</button>
                                 </div>
-                                                                                                         <!-- the loop -->
-                                     
-                                <div class="col-lg-5">
-                                                                                                            <a href="p-1734.html">
-                                    <div class="parnetr-blog-box">
-                                        <div class="parnetrBlog-pic-container">
-                                            <figure><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Vulcan Shield Hungary at JEC World 2026: Advancing High-Temperature Alumina Fiber Solutions" data-lazy-src="wp-content/uploads/2026/02/JEC-World-scaled.webp"><noscript><img src="wp-content/uploads/2026/02/JEC-World-scaled.webp" alt="Vulcan Shield Hungary at JEC World 2026: Advancing High-Temperature Alumina Fiber Solutions"></noscript></figure>
+                                <div class="home-news-track" role="region" aria-label="News and press stories" tabindex="0">
+                                    <a class="home-news-card" href="openroboto-vulcan-shield-hungary-launch-commercial-robotics-data-pilot/index.html">
+                                        <div class="home-news-image">
+                                            <img src="wp-content/uploads/2026/11/OpenRoboto-Vulcan-Shield-Global-Partnership.png" width="1365" height="768" loading="lazy" alt="OpenRoboto and Vulcan Shield Global partnership">
                                         </div>
-                                        <div class="parnetr-blog-contnet">
-                                                                                        <h6>News</h6>
+                                        <div class="home-news-content">
+                                            <div class="home-news-meta"><span class="home-news-category">Press Release</span><time datetime="2026-11-05">November 5, 2026</time></div>
+                                            <h3>Vulcan Shield Hungary and OpenRoboto Begin Industrial Robotics Data Pilot</h3>
+                                            <p>Vulcan Shield Hungary, a subsidiary of Vulcan Shield Global, is collaborating with OpenRoboto on an industrial robotics data pilot at its manufacturing facility in B&eacute;k&eacute;scsaba, Hungary. The initiative explores workstation simulation and first-person task demonstrations to evaluate potential applications of AI-driven robotics in advanced materials manufacturing.</p>
+                                        </div>
+                                    </a>
+                                    <a class="home-news-card" href="p-1933.html">
+                                        <div class="home-news-image">
+                                            <img src="wp-content/uploads/2026/07/IMG_0633.JPG-scaled.jpeg" width="2560" height="1920" loading="lazy" alt="Vulcan Shield Hungary manufacturing facility">
+                                        </div>
+                                        <div class="home-news-content">
+                                            <div class="home-news-meta"><span class="home-news-category">News</span><time datetime="2026-07-09">July 9, 2026</time></div>
+                                            <h3>An European Production Base, a Shorter, More Reliable Material Supply</h3>
+                                            <p>Vulcan Shield Hungary’s manufacturing facility has been fully operational since April 2026, marking an expansion of the company’s production footprint and establishing a European production base for customers across Europe.</p>
+                                        </div>
+                                    </a>
+                                    <a class="home-news-card" href="p-1734.html">
+                                        <div class="home-news-image">
+                                            <img src="wp-content/uploads/2026/02/JEC-World-scaled.webp" width="2560" height="1703" loading="lazy" alt="Vulcan Shield Hungary at JEC World 2026">
+                                        </div>
+                                        <div class="home-news-content">
+                                            <div class="home-news-meta"><span class="home-news-category">News</span><time datetime="2026-02-06">February 6, 2026</time></div>
                                             <h3>Vulcan Shield Hungary at JEC World 2026: Advancing High-Temperature Alumina Fiber Solutions</h3>
-                                            Vulcan Shield Hungary will be exhibiting at JEC World 2026, the world’s leading international composites exhibition. The annual event will take place in Paris, bringing together companies and professionals across advanced materials, composites manufacturing, aerospace, automotive, energy, and industrial sectors. You’ll be able to find us atHall 5Booth F114, where we’ll be sharing our latest [&hellip;]                                        </div>
-                                    </div>
-                                 </a>
-                                                                     </div>
-                                  
+                                            <p>Vulcan Shield Hungary will be exhibiting at JEC World 2026, the world’s leading international composites exhibition, bringing together companies and professionals across advanced materials, composites manufacturing, aerospace, automotive, energy and industrial sectors.</p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
+                            <script>
+                            (() => {
+                                const carousel = document.querySelector('[data-home-news-carousel]');
+                                if (!carousel) return;
+
+                                const track = carousel.querySelector('.home-news-track');
+                                const arrows = carousel.querySelectorAll('[data-news-direction]');
+                                const updateArrows = () => {
+                                    const maxScroll = track.scrollWidth - track.clientWidth;
+                                    arrows.forEach((arrow) => {
+                                        arrow.disabled = Number(arrow.dataset.newsDirection) < 0
+                                            ? track.scrollLeft <= 1
+                                            : track.scrollLeft >= maxScroll - 1;
+                                    });
+                                };
+
+                                arrows.forEach((arrow) => {
+                                    arrow.addEventListener('click', () => {
+                                        const card = track.querySelector('.home-news-card');
+                                        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+                                        track.scrollBy({
+                                            left: Number(arrow.dataset.newsDirection) * (card.getBoundingClientRect().width + gap),
+                                            behavior: 'smooth'
+                                        });
+                                    });
+                                });
+                                track.addEventListener('scroll', updateArrows, { passive: true });
+                                window.addEventListener('resize', updateArrows);
+                                updateArrows();
+                            })();
+                            </script>
                         </div>
                     </div>
                 </div>
